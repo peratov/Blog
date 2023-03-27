@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title> {% block title %} My Blog {% endblock %} </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %} 
+    <header>
+      <h1>My Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article>
+          <h2><a href="blog-post-1.html">Blog Post 1</a></h2>
+          <p>Published on January 1, 2023 by {{name}} </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nibh eu lorem accumsan porttitor. Nullam volutpat massa ac nunc bibendum, id semper mi rhoncus. Sed venenatis fermentum libero, eu elementum sapien euismod sit amet.</p>
+        </article>
+        <article>
+          <h2><a href="blog-post-2.html">Blog Post 2</a></h2>
+          <p>Published on January 2, 2023 by Jane Doe</p>
+          <p>Nunc vehicula malesuada ipsum, ut tincidunt neque eleifend a. Integer gravida dolor eu metus pellentesque, id congue dolor efficitur. Nam eu odio et ipsum sagittis tincidunt sed sit amet odio.</p>
+        </article>
+      </section>
+      <aside>
+        <h3>About the Author</h3>
+        <p>John Doe is a blogger and web developer based in New York City.</p>
+      </aside>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Blog</p>
+    </footer>
+    {% endblock %}
+  </body>
+</html>
